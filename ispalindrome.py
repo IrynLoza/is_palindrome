@@ -22,6 +22,18 @@ Treat spaces and uppercase letters normally:
 def is_palindrome(word):
     """Return True/False if this word is a palindrome."""
 
+    for i in range(len(word) // 2):
+        """check only half of word
+        "porcupine" ====> "porc"
+        when word[i] ==> i 0 ====> p 
+        THEN 
+        word[-i - 1] ===> i 0, 0 - 1 = -1 ====> e
+        """
+        if word[i] != word[-i - 1]:
+            return False
+
+    return True
+
 
 if __name__ == '__main__':
     import doctest
